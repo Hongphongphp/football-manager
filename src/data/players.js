@@ -1,0 +1,60 @@
+const players = [
+  {
+    id: 1,
+    name: "Phạm Hà Hồng Phong",
+    number: 11,
+    position: "FW",
+    phone: "010-0000-0001",
+    active: true,
+  },
+  {
+    id: 2,
+    name: "Phạm Nhật Thành",
+    number: 8,
+    position: "MF",
+    phone: "010-0000-0002",
+    active: true,
+  },
+  {
+    id: 3,
+    name: "Thái Viết Huy",
+    number: 18,
+    position: "GK",
+    phone: "010-0000-0003",
+    active: true,
+  },
+  {
+    id: 4,
+    name: "Nguyễn Phú Anh",
+    number: 13,
+    position: "FW",
+    phone: "010-0000-0004",
+    active: true,
+  },
+  {
+    id: 5,
+    name: "Nguyễn Tiến Đạt",
+    number: 12,
+    position: "DF",
+    phone: "010-0000-0005",
+    active: true,
+  },
+  {
+    id: 6,
+    name: "Nguyễn Văn Thuận",
+    number: 6,
+    position: "MF",
+    phone: "010-0000-0006",
+    active: true,
+  },
+  {
+    id: 7,
+    name: "Đặng Gia Quốc Hưng",
+    number: 17,
+    position: "DF",
+    phone: "010-0000-0007",
+    active: true,
+  },
+];
+
+export default players;
