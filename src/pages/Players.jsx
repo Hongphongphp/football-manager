@@ -1,8 +1,6 @@
-import initialPlayers from "../data/players";
 import PlayerCard from "../components/PlayerCard";
 import { useState } from "react";
-function Players() {
-  const [players, setPlayers] = useState(initialPlayers);
+function Players({ players, setPlayers }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [position, setPosition] = useState("FW");
