@@ -60,3 +60,38 @@
 .card p {
   margin: 2px 0;
 }
+
+stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+}
+
+.stat strong {
+  font-size: 28px;
+}
+
+.stat span {
+  font-size: 13px;
+  color: #666;
+}
+
+.rate-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.rate-table th,
+.rate-table td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}

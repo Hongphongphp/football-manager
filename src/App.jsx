@@ -15,7 +15,10 @@ function App() {
       <h1>Football Team Manager</h1>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route
+          path="/"
+          element={<Dashboard players={players} attendance={attendance} />}
+        />
         <Route
           path="/players"
           element={<Players players={players} setPlayers={setPlayers} />}
