@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-.player-card {
+.card {
   list-style: none;
   background-color: white;
   padding: 12px 16px;
@@ -25,19 +25,38 @@
   border-left: 6px solid gray;
 }
 
-.player-card.gk {
+.card.gk {
   border-left-color: #f9a825;
 }
-.player-card.df {
+.card.df {
   border-left-color: #1565c0;
 }
-.player-card.mf {
+.card.mf {
   border-left-color: #2e7d32;
 }
-.player-card.fw {
+.card.fw {
   border-left-color: #c62828;
 }
 
-.player-card button {
+.card button {
   float: right;
+}
+
+.card.schedule-match {
+  border-left-color: #c62828;
+}
+.card.schedule-training {
+  border-left-color: #1565c0;
+}
+.schedule-type {
+  font-size: 12px;
+  background-color: #eee;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.card h3 {
+  margin: 8px 0 4px;
+}
+.card p {
+  margin: 2px 0;
 }
