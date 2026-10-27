@@ -1,4 +1,5 @@
 import ScheduleCard from "../components/ScheduleCard";
+import PageHeader from "../components/PageHeader";
 import initialSchedules from "../data/schedules";
 function Schedule() {
   const schedules = initialSchedules;
@@ -7,7 +8,11 @@ function Schedule() {
   );
   return (
     <div>
-      <h2>Lịch hoạt động</h2>
+      <PageHeader
+        icon="calendar"
+        title="Lịch hoạt động"
+        subtitle="Trận đấu và buổi tập của đội"
+      />
       <ul className="list">
         {sortedSchedules.map((schedule) => {
           return <ScheduleCard schedule={schedule} key={schedule.id} />;

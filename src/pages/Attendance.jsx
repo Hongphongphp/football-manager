@@ -1,3 +1,4 @@
+import PageHeader from "../components/PageHeader";
 import { useState } from "react";
 import schedules from "../data/schedules";
 function Attendance({ players, attendance, setAttendance }) {
@@ -16,7 +17,11 @@ function Attendance({ players, attendance, setAttendance }) {
 
   return (
     <div>
-      <h2>Điểm danh</h2>
+      <PageHeader
+        icon="check"
+        title="Điểm danh"
+        subtitle="Chọn buổi và đánh dấu những người có mặt"
+      />
       <select
         value={selectedId}
         onChange={(e) => setSelectedId(Number(e.target.value))}
@@ -32,14 +37,23 @@ function Attendance({ players, attendance, setAttendance }) {
       </p>
       <ul className="list">
         {players.map((player) => (
-          <li key={player.id} className="card">
+          <li
+            key={player.id}
+            className={`card attend-row ${
+              presentIds.includes(player.id) ? "present" : ""
+            }`}
+          >
             <label className="check-row">
               <input
                 type="checkbox"
                 checked={presentIds.includes(player.id)}
                 onChange={() => handleToggle(player.id)}
               />
-              #{player.number} {player.name}
+              <span className="jersey small">{player.number}</span>
+              <span className="attend-name">{player.name}</span>
+              {presentIds.includes(player.id) && (
+                <span className="present-tag">✓ Có mặt</span>
+              )}
             </label>
           </li>
         ))}

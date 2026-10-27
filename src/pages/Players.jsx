@@ -1,4 +1,6 @@
 import PlayerCard from "../components/PlayerCard";
+import PageHeader from "../components/PageHeader";
+import Icon from "../components/Icon";
 import { useState } from "react";
 function Players({ players, setPlayers }) {
   const [name, setName] = useState("");
@@ -37,8 +39,11 @@ function Players({ players, setPlayers }) {
 
   return (
     <div>
-      <h2>Cầu thủ</h2>
-      <p className="muted">Tổng: {players.length} cầu thủ</p>
+      <PageHeader
+        icon="users"
+        title="Cầu thủ"
+        subtitle={`${players.length} cầu thủ trong đội`}
+      />
       <form className="card toolbar" onSubmit={handleAdd}>
         <input
           type="text"
@@ -58,11 +63,17 @@ function Players({ players, setPlayers }) {
           <option value="MF">Tiền vệ</option>
           <option value="FW">Tiền đạo</option>
         </select>
-        <button type="submit">Thêm</button>
+        <button type="submit">
+          <Icon name="plus" size={18} />
+          Thêm
+        </button>
       </form>
 
       <div className="toolbar">
-        <span className="muted">Lọc theo vị trí:</span>
+        <span className="filter-label">
+          <Icon name="filter" size={16} />
+          Lọc theo vị trí
+        </span>
       <select value={filter} onChange={(e) => setFilter(e.target.value)}>
         <option value="ALL">Tất cả</option>
         <option value="GK">Thủ môn</option>

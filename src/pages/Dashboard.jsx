@@ -1,5 +1,6 @@
 import schedules from "../data/schedules";
 import ScheduleCard from "../components/ScheduleCard";
+import PageHeader from "../components/PageHeader";
 
 function Dashboard({ players, attendance }) {
   const countByPosition = (pos) =>
@@ -28,32 +29,41 @@ function Dashboard({ players, attendance }) {
     .sort((a, b) => b.rate - a.rate);
   return (
     <div>
-      <h2>Dashboard</h2>
+      <PageHeader
+        icon="dashboard"
+        title="Dashboard"
+        subtitle="Tổng quan tình hình đội bóng"
+      />
 
       <div className="stats">
         <div className="card stat">
+          <span className="stat-icon">👥</span>
           <strong>{players.length}</strong>
           <span>Tổng cầu thủ</span>
         </div>
         <div className="card stat gk">
+          <span className="stat-icon">🧤</span>
           <strong>{countByPosition("GK")}</strong>
           <span>Thủ môn</span>
         </div>
         <div className="card stat df">
+          <span className="stat-icon">🛡️</span>
           <strong>{countByPosition("DF")}</strong>
           <span>Hậu vệ</span>
         </div>
         <div className="card stat mf">
+          <span className="stat-icon">🎯</span>
           <strong>{countByPosition("MF")}</strong>
           <span>Tiền vệ</span>
         </div>
         <div className="card stat fw">
+          <span className="stat-icon">⚡</span>
           <strong>{countByPosition("FW")}</strong>
           <span>Tiền đạo</span>
         </div>
       </div>
 
-      <h3>Buổi sắp tới</h3>
+      <h3 className="section-title">📅 Buổi sắp tới</h3>
       {nextSchedule ? (
         <ul className="list">
           <ScheduleCard schedule={nextSchedule} />
@@ -62,7 +72,7 @@ function Dashboard({ players, attendance }) {
         <p>Chưa có buổi nào sắp tới.</p>
       )}
 
-      <h3>Tỉ lệ đi đá ({totalSessions} buổi đã điểm danh)</h3>
+      <h3 className="section-title">🏆 Tỉ lệ đi đá ({totalSessions} buổi đã điểm danh)</h3>
       {totalSessions === 0 ? (
         <p>Chưa có buổi nào được điểm danh.</p>
       ) : (
@@ -84,7 +94,17 @@ function Dashboard({ players, attendance }) {
                 <td>
                   {player.count}/{totalSessions}
                 </td>
-                <td>{player.rate}%</td>
+                <td>
+                  <div className="rate-cell">
+                    <div className="bar">
+                      <div
+                        className="bar-fill"
+                        style={{ width: `${player.rate}%` }}
+                      />
+                    </div>
+                    <span>{player.rate}%</span>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

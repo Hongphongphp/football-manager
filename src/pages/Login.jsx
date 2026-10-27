@@ -17,7 +17,9 @@ function Login({ onLogin }) {
 
   return (
     <div className="card login-box">
+      <div className="login-logo">⚽</div>
       <h2>Đăng nhập</h2>
+      <p className="muted">Quản lý đội bóng của bạn</p>
       <form onSubmit={handleLogin}>
         <input
           type="text"

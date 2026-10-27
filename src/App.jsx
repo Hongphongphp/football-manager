@@ -24,9 +24,6 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>⚽ Football Team Manager</h1>
-      </header>
       <Navbar user={user} onLogout={handleLogout} />
       <main className="container">
       <Routes>
