@@ -95,3 +95,23 @@ stats {
   padding: 8px 12px;
   border-bottom: 1px solid #eee;
 }
+
+.login-box {
+  max-width: 320px;
+  margin: 40px auto;
+  list-style: none;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navbar-user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
