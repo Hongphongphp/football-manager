@@ -55,7 +55,7 @@ function Dashboard({ players, attendance }) {
 
       <h3>Buổi sắp tới</h3>
       {nextSchedule ? (
-        <ul>
+        <ul className="list">
           <ScheduleCard schedule={nextSchedule} />
         </ul>
       ) : (
@@ -66,7 +66,8 @@ function Dashboard({ players, attendance }) {
       {totalSessions === 0 ? (
         <p>Chưa có buổi nào được điểm danh.</p>
       ) : (
-        <table className="rate-table">
+        <div className="table-wrap">
+          <table className="rate-table">
           <thead>
             <tr>
               <th>Cầu thủ</th>
@@ -88,6 +89,7 @@ function Dashboard({ players, attendance }) {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

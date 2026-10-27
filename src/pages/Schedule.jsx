@@ -8,7 +8,7 @@ function Schedule() {
   return (
     <div>
       <h2>Lịch hoạt động</h2>
-      <ul>
+      <ul className="list">
         {sortedSchedules.map((schedule) => {
           return <ScheduleCard schedule={schedule} key={schedule.id} />;
         })}

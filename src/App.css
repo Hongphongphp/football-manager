@@ -1,28 +1,94 @@
+/* ===== Khung trang ===== */
+.app-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 16px 20px 4px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Thanh menu ===== */
 .navbar {
   display: flex;
-  gap: 16px;
-  padding: 12px 20px;
-  background-color: #2e7d32;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 20px 12px;
+  background-color: var(--primary);
 }
 
 .navbar a {
   color: white;
   padding: 6px 12px;
   border-radius: 6px;
+  opacity: 0.85;
+}
+
+.navbar a:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .navbar a.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  font-weight: bold;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.22);
+  font-weight: 600;
 }
 
+.navbar-user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.navbar-user button {
+  padding: 5px 12px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-user button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Ô (card) dùng chung ===== */
 .card {
   list-style: none;
-  background-color: white;
-  padding: 12px 16px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  border-left: 6px solid gray;
+  background-color: var(--surface);
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border-radius: var(--radius);
+  border-left: 6px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+li.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .card.gk {
@@ -38,80 +104,161 @@
   border-left-color: #c62828;
 }
 
-.card button {
-  float: right;
+.btn-danger {
+  padding: 5px 12px;
+  font-size: 13px;
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
 }
 
+.btn-danger:hover {
+  background-color: var(--danger);
+  color: white;
+}
+
+/* ===== Thanh công cụ (form thêm, bộ lọc) ===== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.toolbar input[type="text"] {
+  flex: 1;
+  min-width: 160px;
+}
+
+.toolbar input[type="number"] {
+  width: 100px;
+}
+
+/* ===== Trang Lịch ===== */
 .card.schedule-match {
   border-left-color: #c62828;
 }
 .card.schedule-training {
   border-left-color: #1565c0;
 }
-.schedule-type {
-  font-size: 12px;
-  background-color: #eee;
-  padding: 2px 8px;
-  border-radius: 10px;
+
+.list .card.schedule-match,
+.list .card.schedule-training {
+  display: block;
 }
+
+.schedule-type {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--primary-soft);
+  color: var(--primary-dark);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
 .card h3 {
   margin: 8px 0 4px;
 }
+
 .card p {
   margin: 2px 0;
+  color: var(--muted);
 }
 
-stats {
+/* ===== Trang Điểm danh ===== */
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ===== Dashboard ===== */
+.stats {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin: 16px 0 24px;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
-  min-width: 110px;
+  flex: 1;
+  min-width: 120px;
+  margin-bottom: 0;
 }
 
 .stat strong {
-  font-size: 28px;
+  font-size: 30px;
+  line-height: 1.1;
 }
 
 .stat span {
   font-size: 13px;
-  color: #666;
+  color: var(--muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .rate-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: white;
-  border-radius: 8px;
 }
 
 .rate-table th,
 .rate-table td {
   text-align: left;
-  padding: 8px 12px;
-  border-bottom: 1px solid #eee;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
 }
 
+.rate-table th {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+  background-color: var(--primary-soft);
+}
+
+.rate-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== Đăng nhập ===== */
 .login-box {
-  max-width: 320px;
+  max-width: 360px;
   margin: 40px auto;
-  list-style: none;
+  padding: 28px;
+  border-left: none;
+  display: block;
+}
+
+.login-box h2 {
+  margin-bottom: 16px;
 }
 
 .login-box form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-.navbar-user {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: white;
+/* ===== Điện thoại ===== */
+@media (max-width: 600px) {
+  .navbar-user {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container {
+    padding: 16px 12px 40px;
+  }
 }

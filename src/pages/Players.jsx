@@ -37,8 +37,9 @@ function Players({ players, setPlayers }) {
 
   return (
     <div>
-      <p>Tổng: {players.length} cầu thủ</p>
-      <form onSubmit={handleAdd}>
+      <h2>Cầu thủ</h2>
+      <p className="muted">Tổng: {players.length} cầu thủ</p>
+      <form className="card toolbar" onSubmit={handleAdd}>
         <input
           type="text"
           placeholder="Tên cầu thủ"
@@ -60,6 +61,8 @@ function Players({ players, setPlayers }) {
         <button type="submit">Thêm</button>
       </form>
 
+      <div className="toolbar">
+        <span className="muted">Lọc theo vị trí:</span>
       <select value={filter} onChange={(e) => setFilter(e.target.value)}>
         <option value="ALL">Tất cả</option>
         <option value="GK">Thủ môn</option>
@@ -67,8 +70,9 @@ function Players({ players, setPlayers }) {
         <option value="MF">Tiền vệ</option>
         <option value="FW">Tiền đạo</option>
       </select>
+      </div>
 
-      <ul>
+      <ul className="list">
         {filteredPlayers.map((player) => {
           return (
             <PlayerCard

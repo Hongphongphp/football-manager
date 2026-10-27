@@ -1,11 +1,85 @@
+/* ===== Biến màu dùng chung cho cả app ===== */
+:root {
+  --primary: #1f7a45;
+  --primary-dark: #17603a;
+  --primary-soft: #e6f2ea;
+  --danger: #c62828;
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --text: #1c2420;
+  --muted: #66716a;
+  --border: #dde3de;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(20, 40, 30, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
+  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h2 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+/* ===== Ô nhập và dropdown ===== */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select {
+  font: inherit;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* ===== Nút bấm ===== */
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
 }

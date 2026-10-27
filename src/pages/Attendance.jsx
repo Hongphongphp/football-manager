@@ -27,13 +27,13 @@ function Attendance({ players, attendance, setAttendance }) {
           </option>
         ))}
       </select>
-      <p>
+      <p className="muted">
         Có mặt : {presentIds.length} / {players.length}
       </p>
-      <ul>
+      <ul className="list">
         {players.map((player) => (
           <li key={player.id} className="card">
-            <label>
+            <label className="check-row">
               <input
                 type="checkbox"
                 checked={presentIds.includes(player.id)}

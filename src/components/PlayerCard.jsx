@@ -2,7 +2,9 @@ function PlayerCard({ player, onDelete }) {
   return (
     <li className={`card ${player.position.toLowerCase()}`}>
       #{player.number} {player.name} - {player.position}{" "}
-      <button onClick={() => onDelete(player.id)}>Xóa</button>
+      <button className="btn-danger" onClick={() => onDelete(player.id)}>
+        Xóa
+      </button>
     </li>
   );
 }
